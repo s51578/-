@@ -43,6 +43,8 @@ class Song implements Comparable<Song>{
 	
 }
 
+
+
 class Genre implements Comparable<Genre>{
 	String genre;
 	//List<Song> songs;
