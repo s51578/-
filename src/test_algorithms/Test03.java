@@ -70,6 +70,7 @@ public class Test03 {
 				
 				arr.add(name);
 				
+				
 				for(int j=i+1; j<clothes.length; j++) {
 					
 					if(!category.equals(clothes[j][1]))
