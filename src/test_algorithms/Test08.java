@@ -14,22 +14,36 @@ public class Test08 {
 		
 		for(int i=0; i<speeds.length; i++) {
 			int time =0;
+			int size =0;
 			if((100-progresses[i]) % speeds[i] == 0 ) {
 				time = (100-progresses[i]) / speeds[i];
 			} else {
 				time = (100-progresses[i]) / speeds[i] +1;
 			}
 			
+			
+			
 			if(!que.isEmpty() && que.peek() < time) {
-				returnList.add(que.size());
+				size = que.size();
+				returnList.add(size);
 				que.clear();
+				
+				
+			} 
+			que.offer(time);
+			
+			if(i == speeds.length-1) {
+				size = que.size();
+				returnList.add(size);
 			}
 			
-			que.offer(time);
+			
+			
+			
 			
 		}
 		
-		returnList.add(que.size());
+		
 		
 		int[] answer = new int[returnList.size()];
 		
@@ -43,8 +57,8 @@ public class Test08 {
 	
 	public static void main(String[] args) {
 		
-		int[] progresses = {95, 90, 99, 99, 80, 99};
-		int[] speeds = {1, 1, 1, 1, 1, 1};
+		int[] progresses = {93, 30, 55};
+		int[] speeds = {1, 30, 5};
 		
 		System.out.println(Arrays.toString(solution(progresses,speeds)));
 	}
